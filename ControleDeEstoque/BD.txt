@@ -1,0 +1,44 @@
+
+admin
+123
+Leandro Pereira
+Sem Cadastro
+Woquiton
+joao Pereira
+ 
+ 
+ 
+ 
+ 
+ 
+Feijão
+Arroz
+Macarrão
+Bolacha
+Sal
+ 
+ 
+ 
+ 
+ 
+58
+49
+64
+27
+35
+0
+0
+0
+0
+0
+3.5
+4.7
+2.3
+1.9
+5.2
+0.0
+0.0
+0.0
+0.0
+0.0
+677.1999999999999

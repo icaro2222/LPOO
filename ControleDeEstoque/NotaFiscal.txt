@@ -1,0 +1,114 @@
+
+--------------LOGIN-------------
+
+Usuario: admin
+Senha: 123
+
+-------------USUARIOS------------
+joao Pereira
+
+--------------RECIBO-------------
+Produto:Macarrão
+Preço unidade2.3
+Quantidade sendo comprada: 3
+Valor a pagar R$ 6.8999999999999995
+Data: 2021/10/14
+Hora: 13:23
+---------------------------------
+--------------LOGIN-------------
+
+Usuario: admin
+Senha: 123
+
+-------------USUARIOS------------
+Sem Cadastro
+
+--------------RECIBO-------------
+Produto:Feijão
+Preço unidade3.5
+Quantidade sendo comprada: 21
+Valor a pagar R$ 73.5
+Data: 2021/10/14
+Hora: 13:44
+---------------------------------
+--------------LOGIN-------------
+
+Usuario: admin
+Senha: 123
+
+-------------USUARIOS------------
+Woquiton
+
+--------------RECIBO-------------
+Produto:Arroz
+Preço unidade4.7
+Quantidade sendo comprada: 12
+Valor a pagar R$ 56.400000000000006
+Data: 2021/10/14
+Hora: 13:44
+---------------------------------
+--------------LOGIN-------------
+
+Usuario: admin
+Senha: 123
+
+-------------USUARIOS------------
+joao Pereira
+
+--------------RECIBO-------------
+Produto:Macarrão
+Preço unidade2.3
+Quantidade sendo comprada: 23
+Valor a pagar R$ 52.9
+Data: 2021/10/14
+Hora: 13:44
+---------------------------------
+--------------LOGIN-------------
+
+Usuario: admin
+Senha: 123
+
+-------------USUARIOS------------
+ 
+
+--------------RECIBO-------------
+Produto:Bolacha
+Preço unidade1.9
+Quantidade sendo comprada: 23
+Valor a pagar R$ 43.699999999999996
+Data: 2021/10/14
+Hora: 13:45
+---------------------------------
+--------------LOGIN-------------
+
+Atendente: admin
+
+-------------USUARIOS------------
+Sem Cadastro
+
+--------------RECIBO-------------
+Produto:Feijão
+Preço unidade3.5
+Quantidade sendo comprada: 1
+Valor a pagar R$ 3.5
+Data: 2021/10/14
+Hora: 13:48
+---------------------------------
+
+
+--------------LOGIN-------------
+
+Atendente: admin
+
+-------------USUARIOS------------
+Woquiton
+
+--------------RECIBO-------------
+Produto:Arroz
+Preço unidade4.7
+Quantidade sendo comprada: 12
+Valor a pagar R$ 56.400000000000006
+Data: 2021/10/14
+Hora: 13:49
+---------------------------------
+
