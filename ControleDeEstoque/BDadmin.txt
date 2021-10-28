@@ -6,10 +6,10 @@ Senha: 123
 
 -------------USUARIOS------------
 
-Usuario 0: Leandro Pereira
+Usuario 0: toto
 Usuario 1: Sem Cadastro
 Usuario 2: Woquiton
-Usuario 3: joao Pereira
+Usuario 3:  
 Usuario 4:  
 Usuario 5:  
 Usuario 6:  
@@ -19,11 +19,11 @@ Usuario 9:
 
 -------------PRODUTOS--------------
 
-Produto 0: Feijão Quantidade:  58 Valor:  3.5 R$
+Produto 0: Feijão Quantidade:  26 Valor:  3.5 R$
 Produto 1: Arroz Quantidade:  49 Valor:  4.7 R$
 Produto 2: Macarrão Quantidade:  64 Valor:  2.3 R$
 Produto 3: Bolacha Quantidade:  27 Valor:  1.9 R$
-Produto 4: Sal Quantidade:  35 Valor:  5.2 R$
+Produto 4: Sal Quantidade:  23 Valor:  5.2 R$
 Produto 5:   Quantidade:  0 Valor:  0.0 R$
 Produto 6:   Quantidade:  0 Valor:  0.0 R$
 Produto 7:   Quantidade:  0 Valor:  0.0 R$
@@ -32,4 +32,4 @@ Produto 9:   Quantidade:  0 Valor:  0.0 R$
 
 ------------VALOR EM CAIXA------------
 
-677.1999999999999
+851.5999999999999

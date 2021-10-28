@@ -112,3 +112,37 @@ Data: 2021/10/14
 Hora: 13:49
 ---------------------------------
 
+
+--------------LOGIN-------------
+
+Atendente: admin
+
+-------------USUARIOS------------
+Sem Cadastro
+
+--------------RECIBO-------------
+Produto:Feijão
+Preço unidade3.5
+Quantidade sendo comprada: 32
+Valor a pagar R$ 112.0
+Data: 2021/10/14
+Hora: 18:46
+---------------------------------
+
+
+--------------LOGIN-------------
+
+Atendente: admin
+
+-------------USUARIOS------------
+Woquiton
+
+--------------RECIBO-------------
+Produto:Sal
+Preço unidade5.2
+Quantidade sendo comprada: 12
+Valor a pagar R$ 62.400000000000006
+Data: 2021/10/21
+Hora: 14:46
+---------------------------------
+
