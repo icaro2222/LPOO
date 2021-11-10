@@ -59,6 +59,24 @@ public class Testar_Mochila {
 							" suporta "+mochila_de_viagem.getPeso()+" Kg");
 		System.out.println("\n");
 		
+		if(mochila_de_negocio.getPeso() > mochila_de_viagem.getPeso()) {
+			System.out.println(" Entre todas as mochilas, a que "
+					+ "mais aguenta peso é a mochila do tipo  "+
+					mochila_de_negocio.getTipo()+
+					", suportando até "+mochila_de_negocio.getPeso()+" Kg");
+			
+		}else if(mochila_de_notebook.getPeso() > mochila_de_viagem.getPeso()) {
+			System.out.println(" Entre todas as mochilas, a que "
+					+ "mais aguenta peso é a mochila do tipo  "+
+					mochila_de_notebook.getTipo()+
+					", suportando até "+mochila_de_notebook.getPeso()+" Kg");
+			
+		}else{
+			System.out.println(" Entre todas as mochilas, a que "
+					+ "mais aguenta peso é a mochila do tipo  "+
+					mochila_de_viagem.getTipo()+
+					", suportando até "+mochila_de_viagem.getPeso()+" Kg");
+		}
 	}
 
 }
