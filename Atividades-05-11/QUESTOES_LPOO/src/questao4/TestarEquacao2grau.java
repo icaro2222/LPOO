@@ -1,12 +1,12 @@
 package questao4;
 
-import questao3.Equacao_2_grau;
+import questao3.Equacao2grau;
 
 //<----Tatakae---->
 
-public class Testar_Equacao_2_grau{
+public class TestarEquacao2grau{
 	
-	static Equacao_2_grau equacao = new Equacao_2_grau();
+	static Equacao2grau equacao = new Equacao2grau();
 	
 	public static void main(String[] args) {
 
@@ -14,7 +14,9 @@ public class Testar_Equacao_2_grau{
 		equacao.setB(-3);
 		equacao.setC(2);
 		
-		equacao.equacao_2_grau();
+		equacao.equacao2grau();
+		
+		equacao.
 
 	}
 

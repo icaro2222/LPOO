@@ -2,12 +2,12 @@ package questao3;
 
 // <----Tatakae---->
 
-public class Equacao_2_grau {
+public class Equacao2grau {
     
     private float a, b, c, delta, raiz_de_delta, raiz1, raiz2;    
     
 
-    public void equacao_2_grau() {
+    public void equacao2grau() {
     	
     	primeira_parte();
     	segunda_parte();
@@ -40,13 +40,13 @@ public class Equacao_2_grau {
 	
 	private void primeira_parte() {
     	
-    	delta = (b*b)-(4*a*c);
+    	this.delta = (b*b)-(4*a*c);
     	
     }
     
     private void segunda_parte() {
     	
-    	raiz_de_delta = (float) Math.sqrt(delta);;
+    	raiz_de_delta = (float) Math.sqrt(delta);
  	
     }
     
