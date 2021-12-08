@@ -9,7 +9,6 @@ public class lapis {
 	private double peso;
 
 	public lapis(String tamanho, String cor, String modelo, String fabricante, double peso) {
-		super();
 		this.tamanho = tamanho;
 		this.cor = cor;
 		this.modelo = modelo;

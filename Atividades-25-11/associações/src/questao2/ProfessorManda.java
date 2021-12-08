@@ -12,7 +12,7 @@ public class ProfessorManda {
 		Estojo estojo = new Estojo("12X90", "azul", "yyy", "cxx", 0.5, (false), lapis, borracha);
 		Bolsa bolsa = new Bolsa("12X90", "azul", "yyy", "cxx", 2.0, (false), null, caderno, null, estojo);
 				
-		Aluno aluno = new Aluno("Ícaro", 2222, null);
+		Aluno aluno = new Aluno("Ícaro", 2222, bolsa);
 		
 		aluno.andar();
 		aluno.pergunta();

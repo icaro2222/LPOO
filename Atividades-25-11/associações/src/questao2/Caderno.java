@@ -14,7 +14,6 @@ public class Caderno {
 	
 	public Caderno(String tamanho, String cor, String modelo, String fabricante, String tipoCapa, int numeroDeFolha,
 			boolean aberta, boolean usado, FolhaDePapel folhaDePapel) {
-		super();
 		this.tamanho = tamanho;
 		this.cor = cor;
 		this.modelo = modelo;
