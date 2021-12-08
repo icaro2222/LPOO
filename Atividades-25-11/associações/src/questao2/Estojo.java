@@ -13,8 +13,7 @@ public class Estojo {
 
 	
 	public Estojo(String tamanho, String cor, String modelo, String fabricante, double peso, boolean aberta,
-			questao2.lapis lapis, Borracha borracha) {
-		super();
+		lapis lapis, Borracha borracha) {
 		this.tamanho = tamanho;
 		this.cor = cor;
 		this.modelo = modelo;
