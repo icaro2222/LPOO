@@ -31,7 +31,7 @@
 	
 	<servlet>
 		<servlet-name>servlet3</servlet-name>
-		<servlet-class>br.servlets.curso.consultarCursoController</servlet-class>
+		<servlet-class>br.servlets.consultarCursoController</servlet-class>
 	</servlet>
 	<servlet-mapping>
 	<servlet-name>servlet3</servlet-name>
@@ -40,7 +40,7 @@
   
 	<servlet>
 		<servlet-name>servlet4</servlet-name>
-		<servlet-class>br.servlets.curso.cadastrarCursoController</servlet-class>
+		<servlet-class>br.servlets.cadastrarCursoController</servlet-class>
 	</servlet>
 	<servlet-mapping>
 	<servlet-name>servlet4</servlet-name>

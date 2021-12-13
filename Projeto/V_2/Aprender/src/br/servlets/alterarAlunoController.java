@@ -10,15 +10,18 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.jasper.tagplugins.jstl.core.ForEach;
+
+import Dao.alunoDao;
 import Model.Aluno;
 
 
-@WebServlet("/consultarAlunoController")
-public class consultarAlunoController extends HttpServlet {
+@WebServlet("/alterarAlunoController")
+public class alterarAlunoController extends HttpServlet {
 	
 	private static final long serialVersionUID = 1L;
 
-    public consultarAlunoController() {
+    public alterarAlunoController() {
     }
 
 	/**
@@ -40,7 +43,8 @@ public class consultarAlunoController extends HttpServlet {
 		
 		request.setAttribute("alunos", alunos);
 		
-		RequestDispatcher dispatcher = request.getRequestDispatcher("aluno/ViewAluno.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("ConsultarAluno.jsp");
 		dispatcher.forward(request, response);
+		System.out.println("Visualizando");
 	}
 }

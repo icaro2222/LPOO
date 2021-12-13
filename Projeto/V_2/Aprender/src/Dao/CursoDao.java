@@ -5,22 +5,21 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
-import Model.Aluno;
+import Model.Curso;
 
-public class alunoDao {
+public class CursoDao {
 
-	public void cadastraraluno(Aluno aluno) throws ClassNotFoundException {
+	public void cadastrarCurso(Curso curso) throws ClassNotFoundException {
 
-		String sql = "INSERT INTO aluno(nome, nmatricula, status) VALUES (?, ?, ?)";
+		String sql = "INSERT INTO curso(nomecurso, valor) VALUES ( ?, ?)";
 		PreparedStatement pStatement = null;
 		Connection conn = null;
 
 		try {
 			conn = new MySqlConnection().getConnection();
 			pStatement = conn.prepareStatement(sql);
-			pStatement.setString(1, aluno.getNome());
-			pStatement.setString(2, aluno.getNmatricula());
-			pStatement.setString(3, aluno.getStatus());
+			pStatement.setString(1, curso.getNomecurso());
+			pStatement.setDouble(2, curso.getValor());
 			pStatement.execute();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -41,27 +40,26 @@ public class alunoDao {
 		}
 	}
 
-	public ArrayList<Aluno> BuscaralunosPorDescricao(String nome) {
-		String sql = "SELECT * FROM aluno WHERE nome LIKE '%" + nome + "%'";
+	public ArrayList<Curso> BuscarCursosPorDescricao(String nome) {
+		String sql = "SELECT * FROM curso WHERE nomecurso LIKE '%" + nome + "%'";
 		ResultSet rs = null;
 		Connection conn = null;
 		PreparedStatement pStatement = null;
-		Aluno aluno = null;
-		ArrayList<Aluno> alunos = null;
+		Curso curso = null;
+		ArrayList<Curso> cursos = null;
 		
 		try {
 			conn = new MySqlConnection().getConnection();
 			pStatement = conn.prepareStatement(sql);
 			rs = pStatement.executeQuery();
 			if (rs != null) {
-				alunos = new ArrayList<Aluno>();
+				cursos = new ArrayList<Curso>();
 				while (rs.next()) {
-					aluno = new Aluno();
-					aluno.setCdaluno(rs.getInt("cdaluno"));
-					aluno.setNome(rs.getString("nome"));
-					aluno.setNmatricula(rs.getString("nmatricula"));
-					aluno.setStatus(rs.getString("status"));
-					alunos.add(aluno);
+					curso = new Curso();
+					curso.setCdcurso(rs.getInt("cdcurso"));
+					curso.setNomecurso(rs.getString("nomecurso"));
+					curso.setValor(rs.getDouble("valor"));;
+					cursos.add(curso);
 				}
 			}
 
@@ -82,30 +80,29 @@ public class alunoDao {
 				e2.printStackTrace();
 			}
 		}
-		return alunos;
+		return cursos;
 	}
 
-	public Aluno BuscarAlunosPorId(int idaluno) {
-		String sql = "SELECT * FROM aluno WHERE cdaluno LIKE '%" + idaluno + "%'";
+	public Curso BuscarCursosPorId(int idcurso) {
+		String sql = "SELECT * FROM curso WHERE cdcurso LIKE '%" + idcurso + "%'";
 		ResultSet rs = null;
 		Connection conn = null;
 		PreparedStatement pStatement = null;
-		Aluno aluno = null;
-		ArrayList<Aluno> alunos = null;
+		Curso curso = null;
+		ArrayList<Curso> cursos = null;
 		
 		try {
 			conn = new MySqlConnection().getConnection();
 			pStatement = conn.prepareStatement(sql);
 			rs = pStatement.executeQuery();
 			if (rs != null) {
-				alunos = new ArrayList<Aluno>();
+				cursos = new ArrayList<Curso>();
 				while (rs.next()) {
-					aluno = new Aluno();
-					aluno.setCdaluno(rs.getInt("cdaluno"));
-					aluno.setNome(rs.getString("nome"));
-					aluno.setNmatricula(rs.getString("nmatricula"));
-					aluno.setStatus(rs.getString("status"));
-					alunos.add(aluno);
+					curso = new Curso();
+					curso.setCdcurso(rs.getInt("cdcurso"));
+					curso.setNomecurso(rs.getString("nomecurso"));
+					curso.setValor(rs.getDouble("valor"));;
+					cursos.add(curso);
 				}
 			}
 
@@ -126,17 +123,17 @@ public class alunoDao {
 				e2.printStackTrace();
 			}
 		}
-		return aluno;
+		return curso;
 	}
 
-	public void Excluiraluno(int idaluno) {
-		String sql = "DELETE FROM aluno WHERE cdaluno = ?";
+	public void ExcluirCurso(int idcurso) {
+		String sql = "DELETE FROM curso WHERE cdcurso = ?";
 		PreparedStatement pStatement = null;
 		Connection conn = null;
 		try {
 			conn = new MySqlConnection().getConnection();
 			pStatement = conn.prepareStatement(sql);
-			pStatement.setInt(1, idaluno);
+			pStatement.setInt(1, idcurso);
 			pStatement.execute();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -157,17 +154,16 @@ public class alunoDao {
 		}
 	}
 
-	public void Alteraraluno(Aluno aluno) {
-		String sql = "UPDATE aluno SET nome = ?, nmatricula = ?, status = ? WHERE idaluno = ?";
+	public void AlterarCurso(Curso curso) {
+		String sql = "UPDATE curso SET nomecurso = ?, valor = ? WHERE idcurso = ?";
 		PreparedStatement pStatement = null;
 		Connection conn = null;
 		try {
 			conn = new MySqlConnection().getConnection();
 			pStatement = conn.prepareStatement(sql);
-			pStatement.setString(1, aluno.getNome());
-			pStatement.setString(2, aluno.getNmatricula());
-			pStatement.setString(3, aluno.getStatus());
-			pStatement.setInt(4, aluno.getCdaluno());
+			pStatement.setString(1, curso.getNomecurso());
+			pStatement.setDouble(2, curso.getValor());
+			pStatement.setInt(3, curso.getCdcurso());
 			pStatement.execute();
 		} catch (Exception e) {
 			e.printStackTrace();
