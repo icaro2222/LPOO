@@ -1,4 +1,4 @@
-package br.servlets;
+package br.servlets.turma;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -10,15 +10,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import Model.Aluno;
+import Model.Turma;
 
 
-@WebServlet("/consultarAlunoController")
-public class consultarAlunoController extends HttpServlet {
+@WebServlet("/consultarTurmaController")
+public class consultarTurmaController extends HttpServlet {
 	
 	private static final long serialVersionUID = 1L;
 
-    public consultarAlunoController() {
+    public consultarTurmaController() {
     }
 
 	/**
@@ -35,12 +35,12 @@ public class consultarAlunoController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=UTF-8");
-		String nome = request.getParameter("nome");	
-		ArrayList<Aluno> alunos = new Aluno().consultar(nome);
+		String nome = request.getParameter("nometurma");	
+		ArrayList<Turma> turmas = new Turma().consultar(nome);
 		
-		request.setAttribute("alunos", alunos);
+		request.setAttribute("turmas", turmas);
 		
-		RequestDispatcher dispatcher = request.getRequestDispatcher("aluno/ViewAluno.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("turma/ViewTurma.jsp");
 		dispatcher.forward(request, response);
 	}
 }

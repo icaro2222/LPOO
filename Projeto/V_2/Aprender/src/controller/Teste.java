@@ -1,14 +1,19 @@
 package controller;
 
-import Model.Aluno;
+import Model.Curso;
 
 public class Teste {
 
 	public static void main(String[] args) throws ClassNotFoundException {
 		
-		Aluno aluno = new Aluno(1112, "Ícaro", "000323-2020", "AP");
 		
-		aluno.consultar("ica");
+		Curso curso = new Curso("Engeharia", 1000.1);
+		Curso curso1 = curso.consultarPorId(1);
+		
+		
+		System.out.println(curso1.getNomecurso());
+		
+		
 		
 	}
 

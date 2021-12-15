@@ -1,4 +1,4 @@
-package br.servlets;
+package br.servlets.curso;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -10,15 +10,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import Model.Aluno;
+import Model.Curso;
 
 
-@WebServlet("/consultarAlunoController")
-public class consultarAlunoController extends HttpServlet {
+@WebServlet("/consultarCursoController")
+public class consultarCursoController extends HttpServlet {
 	
 	private static final long serialVersionUID = 1L;
 
-    public consultarAlunoController() {
+    public consultarCursoController() {
     }
 
 	/**
@@ -35,12 +35,12 @@ public class consultarAlunoController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=UTF-8");
-		String nome = request.getParameter("nome");	
-		ArrayList<Aluno> alunos = new Aluno().consultar(nome);
+		String nome = request.getParameter("nomecurso");	
+		ArrayList<Curso> cursos = new Curso().consultar(nome);
 		
-		request.setAttribute("alunos", alunos);
+		request.setAttribute("cursos", cursos);
 		
-		RequestDispatcher dispatcher = request.getRequestDispatcher("aluno/ViewAluno.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("curso/ViewCurso.jsp");
 		dispatcher.forward(request, response);
 	}
 }

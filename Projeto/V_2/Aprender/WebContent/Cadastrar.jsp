@@ -22,19 +22,19 @@
 		<form action="" method="post" class="bananaForm">
 			<img href="Welcome.jsp" src="img/5.gif"height="150px"><br>
 			<div class="lim">
-				<li><a href="CadastrarAluno.jsp">Cadastrar Auno</a></li>
-				<li><a href="Cadastrar.jsp">Consultar Auno</a></li>
-				<li><a href="Cadastrar.jsp">Consultar Auno</a></li>
+				<li><a href="aluno/CadastrarAluno.jsp">Cadastrar Auno</a></li>
+				<li><a href="curso/CadastrarCurso.jsp">Cadastrar Curso</a></li>
+				<li><a href="turma/CadastrarTurma.jsp">Cadastrar Turma</a></li>
 			</div>
 			<div class="lim">
-				<li><a href="Cadastrar.jsp">Consultar Auno</a></li>
-				<li><a href="Cadastrar.jsp">Consultar Auno</a></li>
-				<li><a href="Cadastrar.jsp">Consultar Auno</a></li>
+				<li><a href="Cadastrar.jsp">Cadastrar #</a></li>
+				<li><a href="Cadastrar.jsp">Cadastrar #</a></li>
+				<li><a href="Cadastrar.jsp">Cadastrar #</a></li>
 			</div>
 			<div class="lim">
-				<li><a href="Cadastrar.jsp">Consultar Auno</a></li>
-				<li><a href="Cadastrar.jsp">Consultar Auno</a></li>
-				<li><a href="Cadastrar.jsp">Consultar Auno</a></li>
+				<li><a href="Cadastrar.jsp">Cadastrar #</a></li>
+				<li><a href="Cadastrar.jsp">Cadastrar #</a></li>
+				<li><a href="Cadastrar.jsp">Cadastrar #</a></li>
 			</div>
 		</form>
 	</main>

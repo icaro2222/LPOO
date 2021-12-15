@@ -11,7 +11,7 @@
 <title>SysSchool</title>
 <meta charset="ISO-8859-1">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" type="text/css" href="css/styles.css">
+<link rel="stylesheet" type="text/css" href="../css/styles2.css">
 </head>
 <body>
 	<nav class="bananaNav">
@@ -27,7 +27,11 @@
 		</div>
 	</nav>
 	<main class="bananaMain">
-		<form action="ConsultarAluno" method="post" class="bananaForm">
+		<form action="ApagarAluno" method="post" class="bananaForm">
+			<div>
+				<label><strong>id:</strong></label><input type="number"
+					name="idaluno">
+			</div>
 			<div>
 				<label><strong>Nome:</strong></label><input type="text"
 					name="nome">
@@ -41,33 +45,6 @@
 			<div>
 				<input id="bananaButton" type="submit" name="salvar"
 					value="Consultar Aluno">
-			</div>
-			
-			<div class="bananaForm">
-			<%
-			if(request.getAttribute("alunos") != null){
-				List<?> alunos = (List<?>) request.getAttribute("alunos");
-				for(int c=0; c<(alunos.size()) && c<3; c++){
-					Aluno aluno = (Aluno) alunos.get(c);
-			%>
-			<div>
-				<div>
-					<span style="font-weight: bold">Nome</span>
-					<span><%out.print(aluno.getNome()); %></span>
-				</div>
-				<div>
-					<span style="font-weight: bold">NumMatricula</span>
-					<span><%out.print(aluno.getNmatricula()); %></span>
-				</div>
-				<div>
-					<span style="font-weight: bold">Status</span>
-					<span><%out.print(aluno.getStatus()); %></span>
-				</div>
-			</div>
-			<%
-			}
-			}
-			%>
 			</div>
 		</form>
 	</main>

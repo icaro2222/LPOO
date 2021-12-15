@@ -1,44 +1,54 @@
 package Model;
 
+import java.util.ArrayList;
+
+import Dao.CursoDao;
+
 public class Curso {
 
-	private int cdaluno;
-	private String nome;
-	private String nmatricula;
-	private String status;
+	private int cdcurso;
+	private String nomecurso;
+	private double valor;
 	
 	public Curso() {
 	}
-	public Curso(int cdaluno, String nome, String nmatricula, String status) {
-		this.cdaluno = cdaluno;
-		this.nome = nome;
-		this.nmatricula = nmatricula;
-		this.status = status;
+	public Curso(String nomecurso, double valor) {
+		this.nomecurso = nomecurso;
+		this.valor = valor;
 	}
-	public int getCdaluno() {
-		return cdaluno;
+	public Curso(int cdcurso, String nomecurso, double valor) {
+		this.cdcurso = cdcurso;
+		this.nomecurso = nomecurso;
+		this.valor = valor;
 	}
-	public void setCdaluno(int cdaluno) {
-		this.cdaluno = cdaluno;
+	public int getCdcurso() {
+		return cdcurso;
 	}
-	public String getNome() {
-		return nome;
+	public void setCdcurso(int cdcurso) {
+		this.cdcurso = cdcurso;
 	}
-	public void setNome(String nome) {
-		this.nome = nome;
+	public String getNomecurso() {
+		return nomecurso;
 	}
-	public String getNmatricula() {
-		return nmatricula;
+	public void setNomecurso(String nomecurso) {
+		this.nomecurso = nomecurso;
 	}
-	public void setNmatricula(String nmatricula) {
-		this.nmatricula = nmatricula;
+	public double getValor() {
+		return valor;
 	}
-	public String getStatus() {
-		return status;
+	public void setValor(double valor) {
+		this.valor = valor;
 	}
-	public void setStatus(String status) {
-		this.status = status;
+	public void salvar() throws ClassNotFoundException {
+		new CursoDao().cadastrarCurso(this);
 	}
-
-	
+	public ArrayList<Curso> consultar(String nome) {
+		return new CursoDao().BuscarCursosPorDescricao(nome);
+	}
+	public void apagar(int idcurso) {
+		new CursoDao().ExcluirCurso(idcurso);
+	}
+	public Curso consultarPorId(int idcurso) {
+		return new CursoDao().BuscarCursosPorId(idcurso);
+	}	
 }

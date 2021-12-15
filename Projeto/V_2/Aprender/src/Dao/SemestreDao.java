@@ -2,25 +2,65 @@ package Dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
 
-import Model.Aluno;
+import Model.Semestre;
 
-public class cursoDao {
+public class SemestreDao {
 
-	public void cadastraraluno(Aluno aluno) throws ClassNotFoundException {
+//	public void cadastrarSemestre(Semestre Semestre) throws ClassNotFoundException {
+//
+//		String sql = "INSERT INTO Semestre(nome) VALUES (?)";
+//		PreparedStatement pStatement = null;
+//		Connection conn = null;
+//
+//		try {
+//			conn = new MySqlConnection().getConnection();
+//			pStatement = conn.prepareStatement(sql);
+//			pStatement.setString(1, Semestre.getNome());
+//			pStatement.execute();
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		} finally {
+//			try {
+//				if (pStatement != null)
+//					pStatement.close();
+//			} catch (Exception e2) {
+//				e2.printStackTrace();
+//			}
+//
+//			try {
+//				if (conn != null)
+//					conn.close();
+//			} catch (Exception e2) {
+//				e2.printStackTrace();
+//			}
+//		}
+//	}
 
-		String sql = "INSERT INTO Aluno VALUES (?, ?, ?, ?)";
-		PreparedStatement pStatement = null;
+	public ArrayList<Semestre> BuscarSemestresPorDescricao(String nome) {
+		String sql = "SELECT * FROM semestre WHERE ano LIKE '%" + nome + "%'";
+		ResultSet rs = null;
 		Connection conn = null;
-
+		PreparedStatement pStatement = null;
+		Semestre semestre = null;
+		ArrayList<Semestre> semestres = null;
+		
 		try {
 			conn = new MySqlConnection().getConnection();
 			pStatement = conn.prepareStatement(sql);
-			pStatement.setInt(1, aluno.getCdaluno());
-			pStatement.setString(2, aluno.getNome());
-			pStatement.setString(3, aluno.getNmatricula());
-			pStatement.setString(4, aluno.getStatus());
-			pStatement.execute();
+			rs = pStatement.executeQuery();
+			if (rs != null) {
+				semestres = new ArrayList<Semestre>();
+				while (rs.next()) {
+					semestre = new Semestre();
+					semestre.setCdsemestre(rs.getInt("cdsemestre"));
+					semestre.setAno(rs.getString("ano"));
+					semestres.add(semestre);
+				}
+			}
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -38,29 +78,28 @@ public class cursoDao {
 				e2.printStackTrace();
 			}
 		}
+		return semestres;
 	}
-}
-//	public ArrayList<aluno> BuscaralunosPorDescricao(String descricao) {
-//		String sql = "SELECT * FROM aluno WHERE descricao LIKE '%" + descricao + "%'";
+
+//	public Semestre BuscarSemestresPorId(int idSemestre) {
+//		String sql = "SELECT * FROM Semestre WHERE cdSemestre LIKE '%" + idSemestre + "%'";
 //		ResultSet rs = null;
 //		Connection conn = null;
 //		PreparedStatement pStatement = null;
-//		aluno aluno = null;
-//		ArrayList<aluno> alunos = null;
+//		Semestre Semestre = null;
+//		ArrayList<Semestre> Semestres = null;
+//		
 //		try {
 //			conn = new MySqlConnection().getConnection();
 //			pStatement = conn.prepareStatement(sql);
 //			rs = pStatement.executeQuery();
 //			if (rs != null) {
-//				alunos = new ArrayList<aluno>();
+//				Semestres = new ArrayList<Semestre>();
 //				while (rs.next()) {
-//					aluno = new aluno();
-//					aluno.setIdaluno(rs.getInt("idaluno"));
-//					aluno.setDescricao(rs.getString("descricao"));
-//					aluno.setQuantidade(rs.getInt("quantidade"));
-//					aluno.setPreco(rs.getDouble("preco"));
-//					aluno.setOnLine(rs.getBoolean("onLine"));
-//					alunos.add(aluno);
+//					Semestre = new Semestre();
+//					Semestre.setCdSemestre(rs.getInt("cdSemestre"));
+//					Semestre.setNome(rs.getString("nome"));
+//					Semestres.add(Semestre);
 //				}
 //			}
 //
@@ -81,17 +120,17 @@ public class cursoDao {
 //				e2.printStackTrace();
 //			}
 //		}
-//		return alunos;
+//		return Semestre;
 //	}
 //
-//	public void Excluiraluno(int idaluno) {
-//		String sql = "DELETE FROM aluno WHERE idaluno = ?";
+//	public void ExcluirSemestre(int idSemestre) {
+//		String sql = "DELETE FROM Semestre WHERE cdSemestre = ?";
 //		PreparedStatement pStatement = null;
 //		Connection conn = null;
 //		try {
 //			conn = new MySqlConnection().getConnection();
 //			pStatement = conn.prepareStatement(sql);
-//			pStatement.setInt(1, idaluno);
+//			pStatement.setInt(1, idSemestre);
 //			pStatement.execute();
 //		} catch (Exception e) {
 //			e.printStackTrace();
@@ -112,18 +151,15 @@ public class cursoDao {
 //		}
 //	}
 //
-//	public void Alteraraluno(aluno aluno) {
-//		String sql = "UPDATE aluno SET descricao = ?, quantidade = ?, preco = ?, onLine = ? WHERE idaluno = ?";
+//	public void AlterarSemestre(Semestre Semestre) {
+//		String sql = "UPDATE Semestre SET nome = ? WHERE idSemestre = ?";
 //		PreparedStatement pStatement = null;
 //		Connection conn = null;
 //		try {
 //			conn = new MySqlConnection().getConnection();
 //			pStatement = conn.prepareStatement(sql);
-//			pStatement.setString(1, aluno.getDescricao());
-//			pStatement.setInt(2, aluno.getQuantidade());
-//			pStatement.setDouble(3, aluno.getPreco());
-//			pStatement.setBoolean(4, aluno.isOnLine());
-//			pStatement.setInt(5, aluno.getIdaluno());
+//			pStatement.setString(1, Semestre.getNome());
+//			pStatement.setInt(2, Semestre.getCdSemestre());
 //			pStatement.execute();
 //		} catch (Exception e) {
 //			e.printStackTrace();
@@ -143,5 +179,4 @@ public class cursoDao {
 //			}
 //		}
 //	}
-
-//}
+}

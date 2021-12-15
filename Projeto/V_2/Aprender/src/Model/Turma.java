@@ -1,44 +1,44 @@
 package Model;
 
+import java.util.ArrayList;
+
+import Dao.TurmaDao;
+
 public class Turma {
 
-	private int cdaluno;
-	private String nome;
-	private String nmatricula;
-	private String status;
+	private int cdturma;
+	private String nometurma;
 	
 	public Turma() {
 	}
-	public Turma(int cdaluno, String nome, String nmatricula, String status) {
-		this.cdaluno = cdaluno;
-		this.nome = nome;
-		this.nmatricula = nmatricula;
-		this.status = status;
-	}
-	public int getCdaluno() {
-		return cdaluno;
-	}
-	public void setCdaluno(int cdaluno) {
-		this.cdaluno = cdaluno;
-	}
-	public String getNome() {
-		return nome;
-	}
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-	public String getNmatricula() {
-		return nmatricula;
-	}
-	public void setNmatricula(String nmatricula) {
-		this.nmatricula = nmatricula;
-	}
-	public String getStatus() {
-		return status;
-	}
-	public void setStatus(String status) {
-		this.status = status;
-	}
-
 	
+	public Turma(String nometurma) {
+		this.nometurma = nometurma;
+	}
+	public int getCdturma() {
+		return cdturma;
+	}
+	public void setCdturma(int cdturma) {
+		this.cdturma = cdturma;
+	}
+	public String getNometurma() {
+		return nometurma;
+	}
+	public void setNometurma(String nometurma) {
+		this.nometurma = nometurma;
+	}
+	
+
+	public void salvar() throws ClassNotFoundException {
+		new TurmaDao().cadastrarTurma(this);
+	}
+	public ArrayList<Turma> consultar(String nome) {
+		return new TurmaDao().BuscarTurmasPorDescricao(nome);
+	}
+	public void apagar(int idturma) {
+		new TurmaDao().ExcluirTurma(idturma);
+	}
+	public Turma consultarPorId(int idturma) {
+		return new TurmaDao().BuscarTurmasPorId(idturma);
+	}	
 }

@@ -1,25 +1,24 @@
 package Model;
 
+import java.util.ArrayList;
+
+import Dao.ProfessorDao;
+
 public class Professor {
 
-	private int cdaluno;
+	private int cdprofessor;
 	private String nome;
-	private String nmatricula;
-	private String status;
 	
 	public Professor() {
 	}
-	public Professor(int cdaluno, String nome, String nmatricula, String status) {
-		this.cdaluno = cdaluno;
+	public Professor(String nome) {
 		this.nome = nome;
-		this.nmatricula = nmatricula;
-		this.status = status;
 	}
-	public int getCdaluno() {
-		return cdaluno;
+	public int getCdprofessor() {
+		return cdprofessor;
 	}
-	public void setCdaluno(int cdaluno) {
-		this.cdaluno = cdaluno;
+	public void setCdprofessor(int cdprofessor) {
+		this.cdprofessor = cdprofessor;
 	}
 	public String getNome() {
 		return nome;
@@ -27,18 +26,20 @@ public class Professor {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public String getNmatricula() {
-		return nmatricula;
+	
+	public void salvar() throws ClassNotFoundException {
+		new ProfessorDao().cadastrarProfessor(this);
 	}
-	public void setNmatricula(String nmatricula) {
-		this.nmatricula = nmatricula;
+	public ArrayList<Professor> consultar(String nome) {
+		return new ProfessorDao().BuscarProfessorsPorDescricao(nome);
 	}
-	public String getStatus() {
-		return status;
+	public Professor apagar(int idprofessor) {
+		return new ProfessorDao().BuscarProfessorsPorId(idprofessor);
 	}
-	public void setStatus(String status) {
-		this.status = status;
+	public void consultarPorId(int idprofessor) {
+		new ProfessorDao().ExcluirProfessor(idprofessor);
 	}
+	
 
 	
 }

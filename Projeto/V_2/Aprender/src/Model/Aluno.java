@@ -60,4 +60,12 @@ public class Aluno {
 	public ArrayList<Aluno> consultar(String nome) {
 		return new alunoDao().BuscaralunosPorDescricao(nome);
 	}
+	public Aluno apagar(int idaluno) {
+		return new alunoDao().BuscarAlunosPorId(idaluno);
+	}
+	public void consultarPorId(int idaluno) {
+		new alunoDao().Excluiraluno(idaluno);
+	}
+	
+	
 }
