@@ -85,8 +85,14 @@ public class alunoDao {
 		return alunos;
 	}
 
-	public Aluno BuscarAlunosPorId(int idaluno) {
-		String sql = "SELECT * FROM aluno WHERE cdaluno LIKE '%" + idaluno + "%'";
+	public ArrayList<Aluno> BuscarAlunosPorId(int idaluno) {
+
+		String sql;
+		if(idaluno ==  -1) {
+			sql = "SELECT * FROM aluno";
+		}else {
+			sql = "SELECT * FROM aluno WHERE cdaluno LIKE '%" + idaluno + "%'";
+		}
 		ResultSet rs = null;
 		Connection conn = null;
 		PreparedStatement pStatement = null;
@@ -126,7 +132,7 @@ public class alunoDao {
 				e2.printStackTrace();
 			}
 		}
-		return aluno;
+		return alunos;
 	}
 
 	public void Excluiraluno(int idaluno) {

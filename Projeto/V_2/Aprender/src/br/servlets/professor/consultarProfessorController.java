@@ -39,7 +39,6 @@ public class consultarProfessorController extends HttpServlet {
 		ArrayList<Professor> professors = new Professor().consultar(nome);
 		
 		request.setAttribute("professors", professors);
-		
 		RequestDispatcher dispatcher = request.getRequestDispatcher("professor/ViewProfessor.jsp");
 		dispatcher.forward(request, response);
 	}

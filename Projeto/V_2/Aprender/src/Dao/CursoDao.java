@@ -83,8 +83,14 @@ public class CursoDao {
 		return cursos;
 	}
 
-	public Curso BuscarCursosPorId(int idcurso) {
-		String sql = "SELECT * FROM curso WHERE cdcurso LIKE '%" + idcurso + "%'";
+	public ArrayList<Curso> BuscarCursosPorId(int idcurso) {
+
+		String sql;
+		if(idcurso == -1) {
+			sql = "SELECT * FROM curso";
+		}else {
+			sql = "SELECT * FROM curso WHERE cdcurso LIKE '%" + idcurso + "%'";
+		}
 		ResultSet rs = null;
 		Connection conn = null;
 		PreparedStatement pStatement = null;
@@ -123,7 +129,7 @@ public class CursoDao {
 				e2.printStackTrace();
 			}
 		}
-		return curso;
+		return cursos;
 	}
 
 	public void ExcluirCurso(int idcurso) {

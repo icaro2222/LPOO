@@ -12,6 +12,15 @@
 	</servlet-mapping>
 	
 	<servlet>
+		<servlet-name>servlet10</servlet-name>
+		<servlet-class>br.servlets.cadastro.cadastrarMatriculaAlunoController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	<servlet-name>servlet10</servlet-name>
+	<url-pattern>/CadastrarMatriculaAluno</url-pattern>	
+	</servlet-mapping>
+	
+	<servlet>
 		<servlet-name>servlet1</servlet-name>
 		<servlet-class>br.servlets.consultarAlunoController</servlet-class>
 	</servlet>
@@ -83,6 +92,19 @@
 	<servlet-mapping>
 	<servlet-name>servlet8</servlet-name>
 	<url-pattern>/ConsultarSemestre</url-pattern>	
+	</servlet-mapping>
+  
+	
+	
+	
+	
+	<servlet>
+		<servlet-name>servlet9</servlet-name>
+		<servlet-class>br.servlets.disciplina.consultarDisciplinaController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	<servlet-name>servlet9</servlet-name>
+	<url-pattern>/ConsultarDisciplina</url-pattern>	
 	</servlet-mapping>
   
 	

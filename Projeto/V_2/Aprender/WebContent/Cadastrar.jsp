@@ -27,12 +27,12 @@
 				<li><a href="turma/CadastrarTurma.jsp">Cadastrar Turma</a></li>
 			</div>
 			<div class="lim">
-				<li><a href="Cadastrar.jsp">Cadastrar #</a></li>
-				<li><a href="Cadastrar.jsp">Cadastrar #</a></li>
-				<li><a href="Cadastrar.jsp">Cadastrar #</a></li>
+				<li><a href="professor/CadastrarProfessor.jsp">Cadastrar Professor</a></li>
+				<li><a href="semestre/CadastrarSemestre.jsp">Cadastrar Semestre</a></li>
+				<li><a href="disciplina/CadastrarDisciplina.jsp">Cadastrar Disciplina</a></li>
 			</div>
 			<div class="lim">
-				<li><a href="Cadastrar.jsp">Cadastrar #</a></li>
+				<li><a href="matricula/CadastrarMatriculaAluno.jsp">Matricular Aluno</a></li>
 				<li><a href="Cadastrar.jsp">Cadastrar #</a></li>
 				<li><a href="Cadastrar.jsp">Cadastrar #</a></li>
 			</div>
