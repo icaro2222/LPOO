@@ -1,44 +1,44 @@
 package Model;
 
+import java.util.ArrayList;
+
+import Dao.SemestreDao;
+
 public class Semestre {
 
-	private int cdaluno;
-	private String nome;
-	private String nmatricula;
-	private String status;
+	private int cdsemestre;
+	private String  ano;
+
 	
 	public Semestre() {
 	}
-	public Semestre(int cdaluno, String nome, String nmatricula, String status) {
-		this.cdaluno = cdaluno;
-		this.nome = nome;
-		this.nmatricula = nmatricula;
-		this.status = status;
+	
+	public Semestre(String ano) {
+		this.ano = ano;
 	}
-	public int getCdaluno() {
-		return cdaluno;
+	public int getCdsemestre() {
+		return cdsemestre;
 	}
-	public void setCdaluno(int cdaluno) {
-		this.cdaluno = cdaluno;
+	public void setCdsemestre(int cdsemestre) {
+		this.cdsemestre = cdsemestre;
 	}
-	public String getNome() {
-		return nome;
+	public String getAno() {
+		return ano;
 	}
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setAno(String ano) {
+		this.ano = ano;
 	}
-	public String getNmatricula() {
-		return nmatricula;
+//	public void salvar() throws ClassNotFoundException {
+//		new SemestreDao().cadastrarSemestre(this);
+//	}
+	public ArrayList<Semestre> consultar(String nome) {
+		return new SemestreDao().BuscarSemestresPorDescricao(nome);
 	}
-	public void setNmatricula(String nmatricula) {
-		this.nmatricula = nmatricula;
-	}
-	public String getStatus() {
-		return status;
-	}
-	public void setStatus(String status) {
-		this.status = status;
-	}
-
+//	public Semestre apagar(int idSemestre) {
+//		return new SemestreDao().BuscarSemestresPorId(idSemestre);
+//	}
+//	public void consultarPorId(int idSemestre) {
+//		new SemestreDao().ExcluirSemestre(idSemestre);
+//	}
 	
 }

@@ -24,7 +24,7 @@
 			<div class="lim">
 				<li><a href="aluno/CadastrarAluno.jsp">Cadastrar Auno</a></li>
 				<li><a href="curso/CadastrarCurso.jsp">Cadastrar Curso</a></li>
-				<li><a href="Cadastrar.jsp">Cadastrar #</a></li>
+				<li><a href="turma/CadastrarTurma.jsp">Cadastrar Turma</a></li>
 			</div>
 			<div class="lim">
 				<li><a href="Cadastrar.jsp">Cadastrar #</a></li>

@@ -24,11 +24,11 @@
 			<div class="lim">
 				<li><a href="aluno/ConsultarAluno.jsp">Consultar Auno</a></li>
 				<li><a href="curso/ConsultarCurso.jsp">Consultar Curso</a></li>
-				<li><a href="Consultar.jsp">Consultar #</a></li>
+				<li><a href="turma/ConsultarTurma.jsp">Consultar Turma</a></li>
 			</div>
 			<div class="lim">
-				<li><a href="Consultar.jsp">Consultar #</a></li>
-				<li><a href="Consultar.jsp">Consultar #</a></li>
+				<li><a href="professor/ConsultarProfessor.jsp">Consultar Professor</a></li>
+				<li><a href="semestre/ConsultarSemestre.jsp">Consultar Semestre</a></li>
 				<li><a href="Consultar.jsp">Consultar #</a></li>
 			</div>
 			<div class="lim">

@@ -46,4 +46,45 @@
 	<servlet-name>servlet4</servlet-name>
 	<url-pattern>/CadastrarCurso</url-pattern>	
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>servlet5</servlet-name>
+		<servlet-class>br.servlets.turma.consultarTurmaController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	<servlet-name>servlet5</servlet-name>
+	<url-pattern>/ConsultarTurma</url-pattern>	
+	</servlet-mapping>
+  
+	<servlet>
+		<servlet-name>servlet6</servlet-name>
+		<servlet-class>br.servlets.turma.cadastrarTurmaController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	<servlet-name>servlet6</servlet-name>
+	<url-pattern>/CadastrarTurma</url-pattern>	
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>servlet7</servlet-name>
+		<servlet-class>br.servlets.professor.consultarProfessorController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	<servlet-name>servlet7</servlet-name>
+	<url-pattern>/ConsultarProfessor</url-pattern>	
+	</servlet-mapping>
+  
+	
+	
+	<servlet>
+		<servlet-name>servlet8</servlet-name>
+		<servlet-class>br.servlets.semestre.consultarSemestreController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	<servlet-name>servlet8</servlet-name>
+	<url-pattern>/ConsultarSemestre</url-pattern>	
+	</servlet-mapping>
+  
+	
+	
 </web-app>
