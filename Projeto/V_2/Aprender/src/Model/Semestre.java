@@ -35,10 +35,11 @@ public class Semestre {
 		return new SemestreDao().BuscarSemestresPorDescricao(nome);
 	}
 //	public Semestre apagar(int idSemestre) {
-//		return new SemestreDao().BuscarSemestresPorId(idSemestre);
-//	}
-//	public void consultarPorId(int idSemestre) {
 //		new SemestreDao().ExcluirSemestre(idSemestre);
+//		
 //	}
+	public ArrayList<Semestre> consultarPorId(int cdsemestre) {
+		return new SemestreDao().BuscarSemestresPorId(cdsemestre);
+	}
 	
 }

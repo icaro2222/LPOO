@@ -38,7 +38,7 @@ public class Turma {
 	public void apagar(int idturma) {
 		new TurmaDao().ExcluirTurma(idturma);
 	}
-	public Turma consultarPorId(int idturma) {
+	public ArrayList<Turma> consultarPorId(int idturma) {
 		return new TurmaDao().BuscarTurmasPorId(idturma);
 	}	
 }

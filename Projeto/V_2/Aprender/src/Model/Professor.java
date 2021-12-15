@@ -33,10 +33,10 @@ public class Professor {
 	public ArrayList<Professor> consultar(String nome) {
 		return new ProfessorDao().BuscarProfessorsPorDescricao(nome);
 	}
-	public Professor apagar(int idprofessor) {
+	public ArrayList<Professor> consultarPorId(int idprofessor) {
 		return new ProfessorDao().BuscarProfessorsPorId(idprofessor);
 	}
-	public void consultarPorId(int idprofessor) {
+	public void apagar(int idprofessor) {
 		new ProfessorDao().ExcluirProfessor(idprofessor);
 	}
 	

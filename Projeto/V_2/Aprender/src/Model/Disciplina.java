@@ -1,25 +1,35 @@
 package Model;
 
+import java.util.ArrayList;
+
+import Dao.DisciplinaDao;
+
 public class Disciplina {
 
-	private int cdaluno;
+	private int cddisciplina;
+	private int cdprofessor;
 	private String nome;
-	private String nmatricula;
-	private String status;
+	private Double valor;
+	
 	
 	public Disciplina() {
 	}
-	public Disciplina(int cdaluno, String nome, String nmatricula, String status) {
-		this.cdaluno = cdaluno;
+	public Disciplina(int cdprofessor, String nome, Double valor) {
+		this.cdprofessor = cdprofessor;
 		this.nome = nome;
-		this.nmatricula = nmatricula;
-		this.status = status;
+		this.valor = valor;
 	}
-	public int getCdaluno() {
-		return cdaluno;
+	public int getCddisciplina() {
+		return cddisciplina;
 	}
-	public void setCdaluno(int cdaluno) {
-		this.cdaluno = cdaluno;
+	public void setCddisciplina(int cddisciplina) {
+		this.cddisciplina = cddisciplina;
+	}
+	public int getCdprofessor() {
+		return cdprofessor;
+	}
+	public void setCdprofessor(int cdprofessor) {
+		this.cdprofessor = cdprofessor;
 	}
 	public String getNome() {
 		return nome;
@@ -27,18 +37,25 @@ public class Disciplina {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public String getNmatricula() {
-		return nmatricula;
+	public Double getValor() {
+		return valor;
 	}
-	public void setNmatricula(String nmatricula) {
-		this.nmatricula = nmatricula;
+	public void setValor(Double valor) {
+		this.valor = valor; 
 	}
-	public String getStatus() {
-		return status;
+	public void salvar() throws ClassNotFoundException {
+		new DisciplinaDao().cadastrarDisciplina(this);
 	}
-	public void setStatus(String status) {
-		this.status = status;
+	public ArrayList<Disciplina> consultar(String nome) {
+		return new DisciplinaDao().BuscarDisciplinasPorDescricao(nome);
 	}
+	public ArrayList<Disciplina> apagar(String nome) {
+		return new DisciplinaDao().BuscarDisciplinasPorDescricao(nome);
+	}
+	public void consultarPorId(int idDisciplina) {
+		new DisciplinaDao().ExcluirDisciplina(idDisciplina);
+	}
+	
 
 	
 }

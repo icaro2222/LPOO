@@ -11,7 +11,7 @@
 <title>SysSchool</title>
 <meta charset="ISO-8859-1">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" type="text/css" href="../css/styles3.css">
+<link rel="stylesheet" type="text/css" href="../css/styles.css">
 </head>
 <body>
 	<nav class="bananaNav">
@@ -28,15 +28,10 @@
 		</div>
 	</nav>
 	<main class="bananaMain">
-		<form action="../ConsultarProfessor" method="post" class="bananaForm">
+		<form action="../ConsultarProfessor" method="post" class="consultarcurso">
 			<div>
 				<label><strong>Nome:</strong></label><input type="text"
 					name="nome">
-			</div>
-			<h2>OU</h2><br>
-			<div>
-				<label><strong>Número de matrícula:</strong></label><input type="text"
-					name="numMatricula">
 			</div>
 			<br>
 			<div>

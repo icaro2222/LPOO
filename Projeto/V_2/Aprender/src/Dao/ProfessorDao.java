@@ -81,8 +81,14 @@ public class ProfessorDao {
 		return professors;
 	}
 
-	public Professor BuscarProfessorsPorId(int idProfessor) {
-		String sql = "SELECT * FROM professor WHERE cdProfessor LIKE '%" + idProfessor + "%'";
+	public ArrayList<Professor> BuscarProfessorsPorId(int idProfessor) {
+
+		String sql;
+		if(idProfessor ==  -1) {
+			sql = "SELECT * FROM professor";
+		}else {
+			sql = "SELECT * FROM professor WHERE cdProfessor LIKE '%" + idProfessor + "%'";
+		}
 		ResultSet rs = null;
 		Connection conn = null;
 		PreparedStatement pStatement = null;
@@ -120,7 +126,7 @@ public class ProfessorDao {
 				e2.printStackTrace();
 			}
 		}
-		return professor;
+		return professors;
 	}
 
 	public void ExcluirProfessor(int idProfessor) {

@@ -81,8 +81,14 @@ public class TurmaDao {
 		return turmas;
 	}
 
-	public Turma BuscarTurmasPorId(int idturma) {
-		String sql = "SELECT * FROM turma WHERE cdturma LIKE '%" + idturma + "%'";
+	public ArrayList<Turma> BuscarTurmasPorId(int idturma) {
+
+		String sql;
+		if(idturma ==  -1) {
+			sql = "SELECT * FROM turma";
+		}else {
+			sql = "SELECT * FROM turma WHERE cdturma LIKE '%" + idturma + "%'";
+		}
 		ResultSet rs = null;
 		Connection conn = null;
 		PreparedStatement pStatement = null;
@@ -120,7 +126,7 @@ public class TurmaDao {
 				e2.printStackTrace();
 			}
 		}
-		return turma;
+		return turmas;
 	}
 
 	public void ExcluirTurma(int idturma) {

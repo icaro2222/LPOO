@@ -48,7 +48,7 @@ public class Curso {
 	public void apagar(int idcurso) {
 		new CursoDao().ExcluirCurso(idcurso);
 	}
-	public Curso consultarPorId(int idcurso) {
+	public ArrayList<Curso> consultarPorId(int idcurso) {
 		return new CursoDao().BuscarCursosPorId(idcurso);
 	}	
 }

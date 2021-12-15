@@ -81,48 +81,54 @@ public class SemestreDao {
 		return semestres;
 	}
 
-//	public Semestre BuscarSemestresPorId(int idSemestre) {
-//		String sql = "SELECT * FROM Semestre WHERE cdSemestre LIKE '%" + idSemestre + "%'";
-//		ResultSet rs = null;
-//		Connection conn = null;
-//		PreparedStatement pStatement = null;
-//		Semestre Semestre = null;
-//		ArrayList<Semestre> Semestres = null;
-//		
-//		try {
-//			conn = new MySqlConnection().getConnection();
-//			pStatement = conn.prepareStatement(sql);
-//			rs = pStatement.executeQuery();
-//			if (rs != null) {
-//				Semestres = new ArrayList<Semestre>();
-//				while (rs.next()) {
-//					Semestre = new Semestre();
-//					Semestre.setCdSemestre(rs.getInt("cdSemestre"));
-//					Semestre.setNome(rs.getString("nome"));
-//					Semestres.add(Semestre);
-//				}
-//			}
-//
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//		} finally {
-//			try {
-//				if (pStatement != null)
-//					pStatement.close();
-//			} catch (Exception e2) {
-//				e2.printStackTrace();
-//			}
-//
-//			try {
-//				if (conn != null)
-//					conn.close();
-//			} catch (Exception e2) {
-//				e2.printStackTrace();
-//			}
-//		}
-//		return Semestre;
-//	}
-//
+	public ArrayList<Semestre> BuscarSemestresPorId(int idSemestre) {
+		
+		String sql;
+		if(idSemestre == -1) {
+			sql = "SELECT * FROM semestre";
+		}else {
+			sql = "SELECT * FROM semestre WHERE cdsemestre LIKE '%" + idSemestre + "%'";
+		}
+		ResultSet rs = null;
+		Connection conn = null;
+		PreparedStatement pStatement = null;
+		Semestre semestre = null;
+		ArrayList<Semestre> semestres = null;
+		
+		try {
+			conn = new MySqlConnection().getConnection();
+			pStatement = conn.prepareStatement(sql);
+			rs = pStatement.executeQuery();
+			if (rs != null) {
+				semestres = new ArrayList<Semestre>();
+				while (rs.next()) {
+					semestre = new Semestre();
+					semestre.setCdsemestre(rs.getInt("cdsemestre"));
+					semestre.setAno(rs.getString("ano"));
+					semestres.add(semestre);
+				}
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (pStatement != null)
+					pStatement.close();
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+
+			try {
+				if (conn != null)
+					conn.close();
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}
+		return semestres;
+	}
+
 //	public void ExcluirSemestre(int idSemestre) {
 //		String sql = "DELETE FROM Semestre WHERE cdSemestre = ?";
 //		PreparedStatement pStatement = null;

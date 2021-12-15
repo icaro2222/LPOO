@@ -19,7 +19,7 @@
 		</ul>
 	</nav>
 	<main class="bananaMain">
-		<form action="" method="post" class="bananaForm">
+		<form action="" method="post" class="bananaForm"> 
 			<img href="Welcome.jsp" src="img/3.gif"height="150px"><br>
 			<div class="lim">
 				<li><a href="aluno/ConsultarAluno.jsp">Consultar Auno</a></li>
@@ -29,7 +29,7 @@
 			<div class="lim">
 				<li><a href="professor/ConsultarProfessor.jsp">Consultar Professor</a></li>
 				<li><a href="semestre/ConsultarSemestre.jsp">Consultar Semestre</a></li>
-				<li><a href="Consultar.jsp">Consultar #</a></li>
+				<li><a href="disciplina/ConsultarDisciplina.jsp">Consultar Disciplina</a></li>
 			</div>
 			<div class="lim">
 				<li><a href="Consultar.jsp">Consultar #</a></li>
