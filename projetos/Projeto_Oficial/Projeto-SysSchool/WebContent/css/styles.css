@@ -8,10 +8,10 @@
 	margin: 0;
 	padding: 0;
 	background-color: #d8ebf9;
-	box-sizing: border-box;
 	text-decoration: none;
 	list-style: none;
-	font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 a {
 	display: center;
@@ -20,7 +20,7 @@ a {
 	line-height: 40px;
 	padding: 12px 5px;
 	margin: -4px;
-	background-color: #729fcf;
+	background-color:  #3465a4;
 	color: #eeeeec;
 	border-radius: 5px;
 	text-decoration: none;
@@ -54,6 +54,8 @@ span {
 	color: #eeeeec;
 	text-align: center;
 	font-weight: width;
+}
+.index {
 }
 .meuh1 {
 	display: flex;
@@ -90,10 +92,10 @@ img, li {
 .menu {
 	display: flex;
 	flex-direction: row;
-	gap: 40px;
+	gap: 2,4rem;
 	width: 100%;
 	justify-content: center;
-	padding: 15px;
+	padding: 0.9rem;
 	background-color: #3465a4;
 	color: white;
 	font-weight: bold;
@@ -103,15 +105,22 @@ img, li {
 	background-repeat: no-repeat;
 	background-size: cover;
 	width: 100vw;
+	height: 110vh;
+}
+.matriculaDisMain {
+	background-image: url("../img/2.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 100vw;
 	height: 100vh;
 }
 .bananaNav ul {
 	display: flex;
 	flex-direction: row;
-	gap: 40px;
+	gap: 3rem;
 	width: 100%;
 	justify-content: center;
-	padding: 15px;
+	padding: 0.9rem;
 	background-color: #3465a4;
 	color: #babdb6;
 	font-weight: bold;
@@ -160,27 +169,114 @@ img, li {
 	align-items: center;
 	align-self: center; 
 }
-.calunoForm {
-	display: flex;
+.alterarAlunoForm {
+	display: flex; 
 	flex-direction: column;
-	padding: 945px;
-	width: 900px;
-	height: 930px;
+	padding: 45px;
+	width: 400px; 
+	height: 820px;
+	background-color: #c3d9fd;
+	margin: 0 auto;
+	margin-top: 4%;
+	border-radius: 15px; 
+	box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+	width: 900px; 
+	align-items: center;
+	align-self: center; 
+}
+.cadastrarFuncionarioForm {
+	display: flex; 
+	flex-direction: column;
+	padding: 45px;
+	width: 60vw; 
+	height: 130vh;
+	background-color: #c3d9fd;
+	margin: 0 auto;
+	margin-top: 4%;
+	border-radius: 15px; 
+	box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+	align-items: center;
+	align-self: center; 
+}
+.cadastrarAlunoForm {
+	display: flex; 
+	flex-direction: column;
+	padding: 45px;
+    width: 666px;
+    height: 1128px;
+	background-color: #c3d9fd;
+	margin: 0 auto;
+	margin-top: 4%;
+	border-radius: 15px; 
+	box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+	align-items: center;
+	align-self: center; 
+}
+.notaForm {
+	display: flex; 
+	flex-direction: column;
+	padding: 45px;
+	width: 550px; 
+	height: 550px;
+	background-color: #c3d9fd;
+	margin: 0 auto;
+	margin-top: 4%;
+	border-radius: 15px; 
+	box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+	align-items: center;
+	align-self: center; 
+}
+.cadastrarCursoForm {
+	display: flex; 
+	flex-direction: column;
+	padding: 45px;
+	width: 300px; 
+	height: 450px;
+	background-color: #c3d9fd;
+	margin: 0 auto;
+	margin-top: 4%;
+	border-radius: 15px; 
+	box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+	width: 900px; 
+	align-items: center;
+	align-self: center; 
+}
+.cadastrarDisciplinaForm {
+	display: flex; 
+	flex-direction: column;
+	padding: 45px;
+	width: 300px; 
+	height: 500px;
+	background-color: #c3d9fd;
+	margin: 0 auto;
+	margin-top: 4%;
+	border-radius: 15px; 
+	box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+	width: 900px; 
+	align-items: center;
+	align-self: center; 
+}
+.matriculaDisForm {
+	display: flex; 
+	flex-direction: column;
+	padding: 45px;
+	width: 1400px; 
+	height: 800px;
 	background-color: #c3d9fd;
 	margin: 0 auto;
 	margin-top: 40px;
-	border-radius: 15px;
+	border-radius: 15px; 
 	box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
-	width: 900px;
+	width: 900px; 
 	align-items: center;
-	align-self: center;
+	align-self: center; 
 }
 .consultarcurso {
 	display: flex;
 	flex-direction: column;
 	padding: 45px;
 	width: 400px;
-	height: 200px;
+	height: 300px;
 	background-color: #c3d9fd;
 	margin: 0 auto;
 	margin-top: 40px;
@@ -188,9 +284,88 @@ img, li {
 	box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
 	width: 900px;
 	align-items: center;
-	align-self: center;
+	align-self: center; 
+}
+.modalexcluir {
+	display: flex;
+	flex-direction: column;
+	padding: 45px;
+	width: 400px;
+	height: 300px;
+	background-color: #c3d9fd;
+	margin: 0px;
+	margin-top: 40px;
+	border-radius: 15px;
+	box-shadow: 0px 10px 40px #95beff;
+	width: 900px;
+	align-items: center;
+	align-self: center; 
 }
 .bananaForm input {
+	border-radius: 8px;
+	border: 1px solid gray;
+	width: 80px;
+	padding: 10px;
+	width: 400px;
+	background-color: #a0becd;
+}
+.alterarAlunoForm input {
+	border-radius: 8px;
+	border: 1px solid gray;
+	width: 80px;
+	padding: 10px;
+	width: 400px;
+	background-color: #a0becd;
+}
+.cadastrarAlunoForm input {
+	border-radius: 8px;
+	border: 1px solid gray;
+	width: 80px;
+	padding: 10px;
+	width: 400px;
+	background-color: #a0becd;
+}
+.cadastrarFuncionarioForm input {
+	border-radius: 8px;
+	border: 1px solid gray;
+	width: 80px;
+	padding: 10px;
+	width: 400px;
+	background-color: #a0becd;
+}
+.notaForm input {
+	border-radius: 8px;
+	border: 1px solid gray;
+	width: 80px;
+	padding: 10px;
+	width: 400px;
+	background-color: #a0becd;
+}
+.cadastrarCursoForm input {
+	border-radius: 8px;
+	border: 1px solid gray;
+	width: 80px;
+	padding: 10px;
+	width: 400px;
+	background-color: #a0becd;
+}
+.cadastrarDisciplinaForm input {
+	border-radius: 8px;
+	border: 1px solid gray;
+	width: 80px;
+	padding: 10px;
+	width: 400px;
+	background-color: #a0becd;
+}
+.matAlunoForm input {
+	border-radius: 8px;
+	border: 1px solid gray;
+	width: 80px;
+	padding: 10px;
+	width: 400px;
+	background-color: #a0becd;
+}
+.matriculaDisForm input {
 	border-radius: 8px;
 	border: 1px solid gray;
 	width: 80px;
@@ -222,7 +397,101 @@ img, li {
 	margin-bottom: 30px;
 	gap: 15px;
 }
+.modalexcluir input {
+	border-radius: 8px;
+	border: 1px solid gray;
+	width: 80px;
+	padding: 10px;
+	width: 400px;
+	background-color: #a0becd;
+}
+.modalexcluir div {
+	display: flex;
+	align-items: center;
+	background-color: #c3d9fd;
+	gap: 15px;
+	margin-bottom: 30px;
+	gap: 15px;
+}
 .bananaForm div {
+	display: flex;
+	align-items: center;
+	background-color: #c3d9fd;
+	gap: 15px;
+	margin-bottom: 30px;
+	gap: 15px;
+}
+.alterarAlunoForm div {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	align-items: flex-start;
+	background-color: #c3d9fd;
+	gap: 15px;
+	margin-bottom: 30px;
+	gap: 15px;
+}
+.cadastrarAlunoForm div {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	align-items: flex-start;
+	background-color: #c3d9fd;
+	gap: 15px;
+	margin-bottom: 30px;
+	gap: 15px;
+}
+.cadastrarFuncionarioForm div {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	align-items: flex-start;
+	background-color: #c3d9fd;
+	gap: 15px;
+	margin-bottom: 30px;
+	gap: 15px;
+}
+.notaForm div {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	align-items: flex-start;
+	background-color: #c3d9fd;
+	gap: 15px;
+	margin-bottom: 30px;
+	gap: 15px;
+}
+.cadastrarCursoForm div {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	align-items: flex-start;
+	background-color: #c3d9fd;
+	gap: 15px;
+	margin-bottom: 30px;
+	gap: 15px;
+}
+.cadastrarDisciplinaForm div {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	align-items: flex-start;
+	background-color: #c3d9fd;
+	gap: 15px;
+	margin-bottom: 30px;
+	gap: 15px;
+}
+.matAlunoForm div {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	align-items: flex-start;
+	background-color: #c3d9fd;
+	gap: 15px;
+	margin-bottom: 30px;
+	gap: 15px;
+}
+.matriculaDisForm div {
 	display: flex;
 	align-items: center;
 	background-color: #c3d9fd;
@@ -250,7 +519,6 @@ img, li {
 	color: #babdb6;
 	border-radius: 5px;
 	cursor: pointer;
-	margin-left: 30px;
 	padding: 10px;
 	width: 100px;
 	height: auto;
@@ -266,10 +534,140 @@ img, li {
 	height: auto;
 }
 
+.flex-row{
+	flex-direction: row;
+}
+
+.btn{
+
+    padding: 10px;
+    background: blueviolet;
+     display: inline-block; 
+     color: white;
+     position: absolute;
+     top: 80%;
+     left: 50%;
+     transform: translate(-50%,-50%);
+     cursor: pointer;
+
+}
+
+.btn:hover{
+
+    background: aliceblue;
+    color: black;
 
 
+}
 
+.DisForm {
+	display: flex; 
+	flex-direction: column;
+	padding: 45px;
+	width: 550px; 
+	height: 360px;
+	background-color: #c3d9fd;
+	margin: 0 auto;
+	margin-top: 4%;
+	border-radius: 15px; 
+	box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+	align-items: center;
+	align-self: center; 
+}
+.DisForm input {
+	border-radius: 8px;
+	border: 1px solid gray;
+	width: 80px;
+	padding: 10px;
+	width: 400px;
+	background-color: #a0becd;
+}
+.DisForm div {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	align-items: flex-start;
+	background-color: #c3d9fd;
+	gap: 15px;
+	margin-bottom: 30px;
+	gap: 15px;
+}
 
+.modal {
+	
+    width: 50px;
+    height: 50px;
+    background-color: rebeccapurple;
+    position: absolute;
+    z-index: 1;
+     top: 20%;
+     left: 45%;
+     transform: translate(-50%,-50%);
+     display: none;
+     animation: animate; 
+     animation-duration: 800ms; 
+} 
+
+.modal-excluir {
+	
+    width: 0px;
+    height: 0px;
+    position: absolute;
+     display: none;
+     left: 5%;
+     top: 20%;
+     justify-content: space-between
+     animation: animate; 
+     animation-duration: 800ms; 
+} 
+
+.modal-alterar {
+	
+    width: 0px;
+    height: 0px;
+    position: absolute;
+     display: none;
+     left: 12rem;
+     top: 15%;
+     animation: animate; 
+     animation-duration: 800ms; 
+} 
+
+.modal-excluir-aluno {
+	
+    width: 0px;
+    height: 0px;
+    position: absolute;
+     display: none;
+     top: 20%;
+    left: 45vh;
+     animation: animate; 
+     animation-duration: 800ms; 
+} 
+
+@keyframes animate{
+
+    from{opacity: 1;}
+    from{opacity: 0;}
+}
+
+.fechar{
+
+    width: 30px;
+    height: 30px;
+    display: inline;
+    background-color: black;
+    border-radius: 50%;
+    float: right;
+    cursor: pointer;
+}
+
+.submit{
+    background: #c3d9fd;
+     display: flex;
+     flex-direction: column;
+     align-items: flex-end;
+}
 
 
 

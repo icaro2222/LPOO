@@ -1,4 +1,5 @@
 
+<%@page import="java.util.List" %>
 <%@page import="Model.Curso"%>
 <%@page import="Model.Semestre"%>
 <%@page import="Model.Turma"%>
@@ -16,41 +17,62 @@
 <title>SysSchool</title>
 <meta charset="ISO-8859-1">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" type="text/css" href="../css/styles1.css">
+<link rel="stylesheet" type="text/css" href="../css/styles.css">
 </head>
 <body>
+	<%
+		String usuario = (String) session.getAttribute("usuario");
+		if(usuario == null){
+			response.sendRedirect("../Login.jsp");
+		}	
+	%>
+	
 	<nav class="bananaNav">
-		<div class="menu">
-			<ul>
-				<li><img src="../img/2.png" height="30px"></li>
-			<div class="me"> 
-			<li><a class="meua" href="../Welcome.jsp">SysSchool</a></li>
+		<ul>
+			<li><img src="../img/2.png" height="30px"></li>
+			<div class="meuh1"> 
+				<li><a class="meua" href="../Dashboard.jsp">SysSchool</a></li>
 			</div>
-				<li><a href="../Cadastrar.jsp">Voltar</a></li>
-				<li><a href="../Consultar.jsp">Fazer uma consulta</a></li>
-			</ul>
-		</div>
+			<li><a href="../Deslogar.jsp">Log out</a></li>
+			<li><img src="../img/LogOut.png" height="30px"></li>
+		</ul>
 	</nav>
 	<main class="bananaMain">
-		<form action="../CadastrarMatriculaAluno" method="post" class="calunoForm">
+	
+    <div class="modal">
+		<img src="../img/sucess3.gif" alt="sucesso">
+    </div>
+		<form action="../CadastrarMatriculaAluno" name="matricula" method="post"  class="cadastrarAlunoForm">
 			<div>
 				<h2>Dados de aluno</h2><br>
 			</div>
 			<div>
-				<label><strong>Nome:</strong></label><input type="text"
-					name="nome">
+				<label><strong>Nome:</strong></label>
+				<input type="text" name="nome" placeholder="Nome" required></input>
 			</div>
 			<div>
-				<label><strong>Número de matrícula:</strong></label><input type="text"
-					name="numMatricula">
+				<label><strong>CPF:</strong></label>
+				<input type="text" name="cpf" placeholder="Cpf" required></input>
 			</div>
 			<div>
-				<label><strong>Status:</strong></label><input type="text"
-					name="status">
+				<label><strong>Data de Nascimento:</strong></label>
+				<input type="date" name="datanascimento" placeholder="dataNascimento" required></input>
+			</div>
+			<div>
+				<label><strong>Estado:</strong></label>
+				<input type="text" name="estado" placeholder="estado" required></input>
+			</div>
+			<div>
+				<label><strong>Cidade:</strong></label>
+				<input type="text" name="cidade" placeholder="cidade" required></input>
+			</div>
+			<div>
+				<label><strong>Estado Civil:</strong></label>
+				<input type="text" name="estadocivil" placeholder="estadoCivil" required></input>
 			</div>
 			<br>
 			<div>
-				<h2>Dados da Matricula</h2><br>
+				<h2>Dados da Matrícula</h2><br>
 			</div>
 			<div>
 				<label><strong>Curso:</strong></label>
@@ -62,21 +84,6 @@
 				<option value="<%out.print(curso.getCdcurso());%>"><%out.print(curso.getNomecurso()); %></option>
 				<%} %>
 			</select>
-				<label><strong>Semestre:</strong></label>
-			<select name="cdsemestre">
-				<%ArrayList<?> semestres = new Semestre().consultarPorId(-1);
-				for(int s=0; s<(semestres.size()) && s<6; s++){
-				Semestre semestre = (Semestre) semestres.get(s); 
-				%>
-				<option value="<%out.print(semestre.getCdsemestre());%>"><%out.print(semestre.getAno()); %></option>
-				<%} %>
-			</select>
-			</div>
-			<div>
-				<label><strong>Valor:</strong></label><input type="number"
-					name="valor">
-			</div>
-			<div>
 				<label><strong>Turma:</strong></label>
 				<select name="cdturma">
 				<%ArrayList<?> turmas = new Turma().consultarPorId(-1);
@@ -85,14 +92,16 @@
 				%>
 				<option value="<%out.print(turma.getCdturma());%>"><%out.print(turma.getNometurma()); %></option>
 				<%} %>
-			</select>
+			</select > 
 			</div>
 			<br>
 			<div>
-				<input id="bananaButton" type="submit" name="salvar"
+				<input onclick="validarMatricula()" id="bananaButton" type="submit" name="salvar"
 					value="Cadastrar Aluno">
 			</div>
 		</form>
 	</main>
+	
+<script src="../css/script.js"></script>
 </body>
 </html>

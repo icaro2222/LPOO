@@ -1,42 +1,135 @@
+<%@page import="Dao.dashboardDao"%>
+<%@page import="java.util.List.*" %>
+<%@page import="java.util.List" %>
+<%@page import="Model.Curso"%>
+<%@page import="Model.Turma"%>
+<%@page import="java.util.ArrayList" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
-<html>
-<head>
-<title>SysSchool</title>
-<meta charset="ISO-8859-1">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" type="text/css" href="css/styles.css">
-</head>
+<html lang="en" dir="ltr">
+  <head>
+	<title>Cadastros</title>
+	<link rel="shortcut icon" href="img/2.png">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/styles1.css">
+    <link rel="stylesheet" href="css/style-login.css">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js" type="text/javascript"></script>
+   </head>
 <body>
-	<nav class="bananaNav">
-		<ul>
-			<li><img src="img/2.png"height="30px"></li>
-			<div class="meuh1"> 
-			<li><a class="meua" href="Welcome.jsp">SysSchool</a></li>
-			</div>
-			<li><a href="Consultar.jsp">Fazer nova consulta</a></li>
-		</ul>
-	</nav>
-	<main class="bananaMain">
-		<form action="" method="post" class="bananaForm">
-			<img href="Welcome.jsp" src="img/5.gif"height="150px"><br>
-			<div class="lim">
-				<li><a href="aluno/CadastrarAluno.jsp">Cadastrar Auno</a></li>
-				<li><a href="curso/CadastrarCurso.jsp">Cadastrar Curso</a></li>
-				<li><a href="turma/CadastrarTurma.jsp">Cadastrar Turma</a></li>
-			</div>
-			<div class="lim">
-				<li><a href="professor/CadastrarProfessor.jsp">Cadastrar Professor</a></li>
-				<li><a href="semestre/CadastrarSemestre.jsp">Cadastrar Semestre</a></li>
-				<li><a href="disciplina/CadastrarDisciplina.jsp">Cadastrar Disciplina</a></li>
-			</div>
-			<div class="lim">
-				<li><a href="matricula/CadastrarMatriculaAluno.jsp">Matricular Aluno</a></li>
-				<li><a href="Cadastrar.jsp">Cadastrar #</a></li>
-				<li><a href="Cadastrar.jsp">Cadastrar #</a></li>
-			</div>
-		</form>
-	</main>
+	<%
+	String usuario = (String) session.getAttribute("usuario");
+	String professor= (String) session.getAttribute("professor");
+		if(usuario == null && professor == null){
+			response.sendRedirect("Login.jsp");
+		}
+		double valor[] = new dashboardDao().dados();
+	%>
+	
+
+  <div class="sidebar">
+    <div class="logo-details">
+      <i><img src="img/2.png"height="30px"></i>
+      <span class="logo_name">SysSchool</span></a>
+    </div>
+      <ul class="nav-links">
+        <li>
+          <a href="Dashboard.jsp">
+            <i class='bx bx-grid-alt' ></i>
+            <span class="links_name">Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a href="matricula/CadastrarMatriculaAluno.jsp">
+            <i class='bx bx-box' ></i>
+            <span class="links_name">Matricular Aluno</span>
+          </a>
+        </li>
+        <li>
+          <a href="curso/CadastrarCurso.jsp">
+            <i class='bx bx-box' ></i>
+            <span class="links_name">Cadastrar Curso</span>
+          </a>
+        </li>
+        <li>
+          <a href="turma/CadastrarTurma.jsp">
+            <i class='bx bx-box' ></i>
+            <span class="links_name">Cadastrar Turma</span>
+          </a>
+        </li>
+        <li>
+          <a href="professor/CadastrarProfessor.jsp">
+            <i class='bx bx-box' ></i>
+            <span class="links_name">Cadastrar Professor</span>
+          </a>
+        </li>
+        <li>
+          <a href="semestre/CadastrarSemestre.jsp">
+            <i class='bx bx-box' ></i>
+            <span class="links_name">Cadastrar Semestre</span>
+          </a>
+        </li>
+        <li>
+          <a href="disciplina/CadastrarDisciplina.jsp">
+            <i class='bx bx-box' ></i>
+            <span class="links_name">Cadastrar Disciplina</span>
+          </a>
+        </li>
+        <li>
+          <a href="nota/CadastrarNota.jsp">
+            <i class='bx bx-box' ></i>
+            <span class="links_name">Cadastrar Nota</span>
+          </a>
+        </li>
+        <li>
+          <a href="matriculaDisciplina/CadastrarMatriculaDisciplina.jsp">
+            <i class='bx bx-box' ></i>
+            <span class="links_name">Matricular Disciplina ao Aluno</span>
+          </a>
+        </li>
+        <li>
+          <a href="funcionario/CadastrarFuncionario.jsp">
+            <i class='bx bx-box' ></i>
+            <span class="links_name">Cadastrar Funcionário</span>
+          </a>
+        </li>
+        <li class="log_out">
+          <a href="Deslogar.jsp">
+            <i class='bx bx-log-out'></i>
+            <span class="links_name">Log out</span>
+          </a>
+        </li>
+      </ul>
+  </div>
+  <section class="home-section">
+    <nav>
+      <div class="sidebar-button">
+        <i class='bx bx-menu sidebarBtn'></i>
+        <span class="dashboard">Cadastrar</span>
+      </div>
+    </nav>
+    <div class="home-content">
+      <div class="overview-boxes">
+      	<img src="img/5.gif">
+      </div>
+    </div>
+  </section>
+
+  <script>
+   let sidebar = document.querySelector(".sidebar");
+let sidebarBtn = document.querySelector(".sidebarBtn");
+sidebarBtn.onclick = function() {
+  sidebar.classList.toggle("active");
+  if(sidebar.classList.contains("active")){
+  sidebarBtn.classList.replace("bx-menu" ,"bx-menu-alt-right");
+}else
+  sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+}
+ </script>
+
+</body>
+<script src="css/script.js"></script>
 </body>
 </html>

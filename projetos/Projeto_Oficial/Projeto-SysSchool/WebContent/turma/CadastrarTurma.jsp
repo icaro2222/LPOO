@@ -9,30 +9,42 @@
 <link rel="stylesheet" type="text/css" href="../css/styles.css">
 </head>
 <body>
+	<%
+		String usuario = (String) session.getAttribute("usuario");
+		if(usuario == null){
+			response.sendRedirect("../Login.jsp");
+		}	
+	%>
+	
 	<nav class="bananaNav">
-		<div class="menu">
-			<ul>
-				<li><img src="../img/2.png" height="30px"></li>
-			<div class="me"> 
-			<li><a class="meua" href="../Welcome.jsp">SysSchool</a></li>
+		<ul>
+			<li><img src="../img/2.png" height="30px"></li>
+			<div class="meuh1"> 
+				<li><a class="meua" href="../Dashboard.jsp">SysSchool</a></li>
 			</div>
-				<li><a href="../Cadastrar.jsp">Voltar</a></li>
-				<li><a href="../Consultar.jsp">Fazer uma consulta</a></li>
-			</ul>
-		</div>
+			<li><a href="../Deslogar.jsp">Log out</a></li>
+			<li><img src="../img/LogOut.png" height="30px"></li>
+		</ul>
 	</nav>
 	<main class="bananaMain">
-		<form action="../CadastrarTurma" method="post" class="bananaForm">
+    <div class="modal">
+		<img src="../img/sucess3.gif" alt="sucesso">
+    </div>
+		<form action="../CadastrarTurma" method="post" name="turma" class="cadastrarCursoForm">
+			<div>
+				<h2>Cadastrar Turma</h2>
+			</div>
 			<div>
 				<label><strong>Nome:</strong></label><input type="text"
-					name="nometurma">
+					name="nometurma" required>
 			</div>
 			<br>
 			<div>
-				<input id="bananaButton" type="submit" name="salvar"
+				<input onclick="validarTurma()" id="bananaButton" type="submit" name="salvar"
 					value="Cadastrar Turma">
 			</div>
 		</form>
 	</main>
+<script src="../css/script.js" type="text/javascript"></script>
 </body>
 </html>

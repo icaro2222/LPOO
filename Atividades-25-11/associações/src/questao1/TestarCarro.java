@@ -12,6 +12,10 @@ public class TestarCarro
 	    meuCarro = new Carro("Kombi", new Motor("Fiat", 2.0, "Gasolina"));
 	    
 	    meuCondutor.dirigir(meuCarro);
+	    
+	    
+	    
+	    
+	    
 	}
-    // <-- Tatakae -->
 }

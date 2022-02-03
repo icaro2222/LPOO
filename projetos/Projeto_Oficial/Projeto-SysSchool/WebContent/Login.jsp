@@ -1,39 +1,78 @@
+<%@page import="com.sun.nio.sctp.MessageInfo"%>
+<%@page import="Model.Funcionario"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<title>SysSchool</title>
-<meta charset="ISO-8859-1">
+<title>Login</title>
+<link rel="shortcut icon" href="img/2.png">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" type="text/css" href="css/styles.css">
+<link rel="stylesheet" type="text/css" href="css/style-login.css">
 </head>
 <body>
-	<nav class="bananaNav">
-		<ul>
-			<li><img href="Welcome.jsp" src="img/2.png"height="30px"></li>
-		</ul>
-	</nav>
-	<main class="bananaMain">
-		<form action="" method="post" class="bananaForm">
-			<h2>SysSchool</h2><br>
-          <h3 class="login-head"><i class="fa fa-lg fa-fw fa-user"></i>Entrar</h3><br>
-          <div class="form-group">
-            <label class="control-label">E-MAIL</label>
-            <input class="form-control" type="email" name="login" placeholder="E-mail" autofocus required>
-          </div>
-          <div class="form-group">
-            <label class="control-label">SENHA</label>
-            <input class="form-control" type="password" name="senha" placeholder="Senha" required>
-          </div>
-          <div>
-				<input id="bananaButton" type="submit" name="salvar" value="Entar">
+
+	<%
+	String user= (String) session.getAttribute("usuario");
+	String aluno = (String) session.getAttribute("aluno");
+	String professor= (String) session.getAttribute("professor");
+		if(user != null || aluno != null || professor != null){
+			response.sendRedirect("Dashboard.jsp");
+		}
+	%>
+	<main>
+		<form method="post">
+		<div class="main-login">
+			<div class="left-login">
+				<h1>SysSchool</h1>
+				<img alt="sysschool" src="img/sysSchool.svg" class="left-image-login">
 			</div>
-			<div class="newslink">
-         <input type="hidden" name="submit_newsletter" />
-         <a  href="Welcome.jsp" >ENVIAR</a>
-      </div>
-		</form>
+			<div class="right-login">
+				<div class="card-login">
+					<h1>LOGIN</h1>
+					<div class="textfield">
+						<label for="email">E-mail</label>
+		            	<input type="email" name="email" placeholder="E-mail" autofocus required>
+					</div>
+					<div class="textfield">
+						<label for="senha">Senha</label>
+		            	<input type="password" name="senha" placeholder="Senha" required>
+					</div>
+					<input class="btn-login" id="login-Button" type="submit" name="salvar" value="Entrar">
+				</div>
+			</div>	
+		</div>
+	</form>
+		<%
+			String usuario = request.getParameter("email");
+			String senha = request.getParameter("senha");
+			Funcionario funcionario = new Funcionario(usuario, senha);
+			//funcionario.CriptografarSenha(senha);
+			int validar = funcionario.validarFuncionario();
+			if( validar == 1){
+				session.setAttribute("admin", usuario);
+				session.setAttribute("usuario", usuario);
+				response.sendRedirect("Dashboard.jsp");
+			}else if( validar == 2){
+				session.setAttribute("funcionario", usuario);
+				response.sendRedirect("Dashboard.jsp");
+			}else if( validar == 3){
+				session.setAttribute("professor", usuario);
+				response.sendRedirect("Dashboard.jsp");
+			}else if( validar == 4){
+				session.setAttribute("aluno", usuario);
+				response.sendRedirect("aluno/DashboardAluno.jsp");
+			}
+		
+		%>
+	
 	</main>
 </body>
+	<footer>
+		<p>© Sistema desenvolvido por 
+			<a href="https://github.com/icaro2222" target="_blank">
+				<i class="fab fa-github"></i> Ícaro Dias</a>
+		</p>
+	</footer>
 </html>
